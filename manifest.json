@@ -1,0 +1,74 @@
+{
+    "name": "app-legislacao-dev",
+    "version": "1.0.0",
+    "description": "Busca Legislação: Obtém textos de leis, decretos e normas jurídicas por palavra-chave",
+    "auth": {
+        "description": {
+            "title": "Configuração de Acesso",
+            "body": "Configure suas credenciais para acessar o serviço.",
+            "footer": "As credenciais são armazenadas com segurança.",
+            "link": ""
+        },
+        "params": [            {
+                "name": "whomToken",
+                "type": "string",
+                "inputType": "text",
+                "required": true,
+                "label": "Token do Whom"
+            },
+            {
+                "name": "whomExtensionId",
+                "type": "string",
+                "inputType": "text",
+                "required": true,
+                "label": "ID da Extensão do Whom"
+            }        
+        ]
+    },
+    "functions": {
+        "buscarLegislacao": {
+            "script": "dist/buscarLegislacao.js",
+            "description": "Busca leis e normativas por palavra-chave",
+            "category": "judicial",            "values": {
+                "termo": "exemplo",
+                "filtro": "todos"
+            },
+            "params": [
+                {
+                    "name": "termo",
+                    "type": "string",
+                    "inputType": "text",
+                    "required": true,
+                    "label": "Termo de consulta"
+                },
+                {
+                    "name": "filtro",
+                    "type": "string",
+                    "inputType": "text",
+                    "required": false,
+                    "label": "Filtro de resultados"
+                }
+            ]        },
+        "obterTextoLegal": {
+            "script": "dist/obterTextoLegal.js",
+            "description": "Obtém texto completo de lei específica",
+            "category": "judicial",
+            "values": {
+                "parametro": "valor"
+            },
+            "params": [
+                {
+                    "name": "parametro",
+                    "type": "string",
+                    "inputType": "text",
+                    "required": true,
+                    "label": "Parâmetro principal"
+                }
+            ]        }    },
+    "config": {
+        "timeout": 60000,
+        "max_retries": 3,
+        "cache_ttl": 3600
+    },
+    "mcp": true
+}
