@@ -9,7 +9,8 @@
             "footer": "As credenciais são armazenadas com segurança.",
             "link": ""
         },
-        "params": [            {
+        "params": [
+            {
                 "name": "whomToken",
                 "type": "string",
                 "inputType": "text",
@@ -22,16 +23,23 @@
                 "inputType": "text",
                 "required": true,
                 "label": "ID da Extensão do Whom"
-            }        
+            }
         ]
     },
     "functions": {
         "buscarLegislacao": {
             "script": "dist/buscarLegislacao.js",
             "description": "Busca leis e normativas por palavra-chave",
-            "category": "judicial",            "values": {
+            "category": "judicial",
+            "values": {
                 "termo": "exemplo",
                 "filtro": "todos"
+            },
+            "help": {
+                "title": "Como usar a função buscarLegislacao",
+                "body": "Use esta função para buscar leis, decretos e normas jurídicas utilizando palavras-chave. Você pode fornecer um termo de consulta obrigatório e um filtro opcional para refinar os resultados.",
+                "footer": "",
+                "link": ""
             },
             "params": [
                 {
@@ -48,13 +56,20 @@
                     "required": false,
                     "label": "Filtro de resultados"
                 }
-            ]        },
+            ]
+        },
         "obterTextoLegal": {
             "script": "dist/obterTextoLegal.js",
             "description": "Obtém texto completo de lei específica",
             "category": "judicial",
             "values": {
                 "parametro": "valor"
+            },
+            "help": {
+                "title": "Como usar a função obterTextoLegal",
+                "body": "Use esta função para obter o texto completo de uma lei específica fornecendo o parâmetro necessário.",
+                "footer": "",
+                "link": ""
             },
             "params": [
                 {
@@ -64,7 +79,9 @@
                     "required": true,
                     "label": "Parâmetro principal"
                 }
-            ]        }    },
+            ]
+        }
+    },
     "config": {
         "timeout": 60000,
         "max_retries": 3,
