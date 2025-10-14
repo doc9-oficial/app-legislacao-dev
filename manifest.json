@@ -28,6 +28,7 @@
     },
     "functions": {
         "buscarLegislacao": {
+            "name": "Buscar Legislação - Which AI",
             "script": "dist/buscarLegislacao.js",
             "description": "Busca leis e normativas por palavra-chave",
             "category": "judicial",
@@ -59,6 +60,7 @@
             ]
         },
         "obterTextoLegal": {
+            "name": "Obter Texto Legal - Which AI",
             "script": "dist/obterTextoLegal.js",
             "description": "Obtém texto completo de lei específica",
             "category": "judicial",
